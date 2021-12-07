@@ -63,6 +63,33 @@ function cor1() {
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[2] + "</p><button class='quiz-btn' id='btn20' onclick='inc2()'>" + btn2[0] + "</button><button class='quiz-btn' id='btn21' onclick='cor2()'>" + btn2[1] + "</button><button class='quiz-btn' id='btn22' onclick='inc2()'>" + btn2[2] + "</button><button class='quiz-btn' id='btn23' onclick='inc2()'>" + btn2[3] + "</button>";
 }
 
+// questions 4 index 3
+function inc2() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[3] + "</p><button class='quiz-btn' id='btn30' onclick='inc3()'>" + btn3[0] + "</button><button class='quiz-btn' id='btn31' onclick='cor3()'>" + btn3[1] + "</button><button class='quiz-btn' id='btn32' onclick='inc3()'>" + btn3[2] + "</button><button class='quiz-btn' id='btn33' onclick='inc3()'>" + btn3[3] + "</button>";
+}
+
+function cor2() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[3] + "</p><button class='quiz-btn' id='btn30' onclick='inc3()'>" + btn3[0] + "</button><button class='quiz-btn' id='btn31' onclick='cor3()'>" + btn3[1] + "</button><button class='quiz-btn' id='btn32' onclick='inc3()'>" + btn3[2] + "</button><button class='quiz-btn' id='btn33' onclick='inc3()'>" + btn3[3] + "</button>";
+}
+
+// questions 5 index 4
+function inc3() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[4] + "</p><button class='quiz-btn' id='btn40' onclick='inc4()'>" + btn4[0] + "</button><button class='quiz-btn' id='btn41' onclick='cor4()'>" + btn4[1] + "</button><button class='quiz-btn' id='btn42' onclick='inc4()'>" + btn4[2] + "</button><button class='quiz-btn' id='btn43' onclick='inc4()'>" + btn4[3] + "</button>";
+}
+
+function cor3() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[4] + "</p><button class='quiz-btn' id='btn40' onclick='inc4()'>" + btn4[0] + "</button><button class='quiz-btn' id='btn41' onclick='cor4()'>" + btn4[1] + "</button><button class='quiz-btn' id='btn42' onclick='inc4()'>" + btn4[2] + "</button><button class='quiz-btn' id='btn43' onclick='inc4()'>" + btn4[3] + "</button>";
+}
+
+// questions 6 index 5
+function inc4() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[5] + "</p><button class='quiz-btn' id='btn50' onclick='inc5()'>" + btn5[0] + "</button><button class='quiz-btn' id='btn51' onclick='inc5()'>" + btn5[1] + "</button><button class='quiz-btn' id='btn52' onclick='inc5()'>" + btn5[2] + "</button><button class='quiz-btn' id='btn53' onclick='cor5()'>" + btn5[3] + "</button>";
+}
+
+function cor4() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[5] + "</p><button class='quiz-btn' id='btn50' onclick='inc5()'>" + btn5[0] + "</button><button class='quiz-btn' id='btn51' onclick='inc5()'>" + btn5[1] + "</button><button class='quiz-btn' id='btn52' onclick='inc5()'>" + btn5[2] + "</button><button class='quiz-btn' id='btn53' onclick='cor5()'>" + btn5[3] + "</button>";
+}
+
 
 
 
