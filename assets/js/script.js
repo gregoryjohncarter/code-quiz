@@ -46,51 +46,161 @@ function inc0() {
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[1] + "</p><button class='quiz-btn' id='btn10' onclick='inc1()'>" + btn1[0] + "</button><button class='quiz-btn' id='btn11' onclick='cor1()'>" + btn1[1] + "</button><button class='quiz-btn' id='btn12' onclick='inc1()'>" + btn1[2] + "</button><button class='quiz-btn' id='btn13' onclick='inc1()'>" + btn1[3] + "</button>";
 
     document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
+
 }
 
 function cor0() {
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[1] + "</p><button class='quiz-btn' id='btn10' onclick='inc1()'>" + btn1[0] + "</button><button class='quiz-btn' id='btn11' onclick='cor1()'>" + btn1[1] + "</button><button class='quiz-btn' id='btn12' onclick='inc1()'>" + btn1[2] + "</button><button class='quiz-btn' id='btn13' onclick='inc1()'>" + btn1[3] + "</button>";
 
-    document.getElementById('content').innerHTML = "<p> Correct! </p>"
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
+
 }
 
 // questions 3 index 2
 function inc1() {
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[2] + "</p><button class='quiz-btn' id='btn20' onclick='inc2()'>" + btn2[0] + "</button><button class='quiz-btn' id='btn21' onclick='cor2()'>" + btn2[1] + "</button><button class='quiz-btn' id='btn22' onclick='inc2()'>" + btn2[2] + "</button><button class='quiz-btn' id='btn23' onclick='inc2()'>" + btn2[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
+
+    
 }
 
 function cor1() {
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[2] + "</p><button class='quiz-btn' id='btn20' onclick='inc2()'>" + btn2[0] + "</button><button class='quiz-btn' id='btn21' onclick='cor2()'>" + btn2[1] + "</button><button class='quiz-btn' id='btn22' onclick='inc2()'>" + btn2[2] + "</button><button class='quiz-btn' id='btn23' onclick='inc2()'>" + btn2[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
 }
 
 // questions 4 index 3
 function inc2() {
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[3] + "</p><button class='quiz-btn' id='btn30' onclick='inc3()'>" + btn3[0] + "</button><button class='quiz-btn' id='btn31' onclick='cor3()'>" + btn3[1] + "</button><button class='quiz-btn' id='btn32' onclick='inc3()'>" + btn3[2] + "</button><button class='quiz-btn' id='btn33' onclick='inc3()'>" + btn3[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
 }
 
 function cor2() {
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[3] + "</p><button class='quiz-btn' id='btn30' onclick='inc3()'>" + btn3[0] + "</button><button class='quiz-btn' id='btn31' onclick='cor3()'>" + btn3[1] + "</button><button class='quiz-btn' id='btn32' onclick='inc3()'>" + btn3[2] + "</button><button class='quiz-btn' id='btn33' onclick='inc3()'>" + btn3[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
 }
 
 // questions 5 index 4
 function inc3() {
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[4] + "</p><button class='quiz-btn' id='btn40' onclick='inc4()'>" + btn4[0] + "</button><button class='quiz-btn' id='btn41' onclick='cor4()'>" + btn4[1] + "</button><button class='quiz-btn' id='btn42' onclick='inc4()'>" + btn4[2] + "</button><button class='quiz-btn' id='btn43' onclick='inc4()'>" + btn4[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
 }
 
 function cor3() {
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[4] + "</p><button class='quiz-btn' id='btn40' onclick='inc4()'>" + btn4[0] + "</button><button class='quiz-btn' id='btn41' onclick='cor4()'>" + btn4[1] + "</button><button class='quiz-btn' id='btn42' onclick='inc4()'>" + btn4[2] + "</button><button class='quiz-btn' id='btn43' onclick='inc4()'>" + btn4[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
 }
 
 // questions 6 index 5
 function inc4() {
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[5] + "</p><button class='quiz-btn' id='btn50' onclick='inc5()'>" + btn5[0] + "</button><button class='quiz-btn' id='btn51' onclick='inc5()'>" + btn5[1] + "</button><button class='quiz-btn' id='btn52' onclick='inc5()'>" + btn5[2] + "</button><button class='quiz-btn' id='btn53' onclick='cor5()'>" + btn5[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
 }
 
 function cor4() {
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[5] + "</p><button class='quiz-btn' id='btn50' onclick='inc5()'>" + btn5[0] + "</button><button class='quiz-btn' id='btn51' onclick='inc5()'>" + btn5[1] + "</button><button class='quiz-btn' id='btn52' onclick='inc5()'>" + btn5[2] + "</button><button class='quiz-btn' id='btn53' onclick='cor5()'>" + btn5[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
+}
+
+// questions 7 index 6
+function inc5() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[6] + "</p><button class='quiz-btn' id='btn60' onclick='cor6()'>" + btn6[0] + "</button><button class='quiz-btn' id='btn61' onclick='inc6()'>" + btn6[1] + "</button><button class='quiz-btn' id='btn62' onclick='inc6()'>" + btn6[2] + "</button><button class='quiz-btn' id='btn63' onclick='inc6()'>" + btn6[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
+}
+
+function cor5() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[6] + "</p><button class='quiz-btn' id='btn60' onclick='cor6()'>" + btn6[0] + "</button><button class='quiz-btn' id='btn61' onclick='inc6()'>" + btn6[1] + "</button><button class='quiz-btn' id='btn62' onclick='inc6()'>" + btn6[2] + "</button><button class='quiz-btn' id='btn63' onclick='inc6()'>" + btn6[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
+}
+
+// questions 8 index 7
+function inc6() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[7] + "</p><button class='quiz-btn' id='btn70' onclick='inc7()'>" + btn7[0] + "</button><button class='quiz-btn' id='btn71' onclick='cor7()'>" + btn7[1] + "</button><button class='quiz-btn' id='btn72' onclick='inc7()'>" + btn7[2] + "</button><button class='quiz-btn' id='btn73' onclick='inc7()'>" + btn7[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
+}
+
+function cor6() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[7] + "</p><button class='quiz-btn' id='btn70' onclick='inc7()'>" + btn7[0] + "</button><button class='quiz-btn' id='btn71' onclick='cor7()'>" + btn7[1] + "</button><button class='quiz-btn' id='btn72' onclick='inc7()'>" + btn7[2] + "</button><button class='quiz-btn' id='btn73' onclick='inc7()'>" + btn7[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
 }
 
 
+// questions 9 index 8
+function inc7() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[8] + "</p><button class='quiz-btn' id='btn80' onclick='inc8()'>" + btn8[0] + "</button><button class='quiz-btn' id='btn81' onclick='inc8()'>" + btn8[1] + "</button><button class='quiz-btn' id='btn82' onclick='cor8()'>" + btn8[2] + "</button><button class='quiz-btn' id='btn83' onclick='inc8()'>" + btn8[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
+}
+
+function cor7() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[8] + "</p><button class='quiz-btn' id='btn80' onclick='inc8()'>" + btn8[0] + "</button><button class='quiz-btn' id='btn81' onclick='inc8()'>" + btn8[1] + "</button><button class='quiz-btn' id='btn82' onclick='cor8()'>" + btn8[2] + "</button><button class='quiz-btn' id='btn83' onclick='inc8()'>" + btn8[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
+}
+
+// questions 10 index 9
+function inc8() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[9] + "</p><button class='quiz-btn' id='btn90' onclick='cor9()'>" + btn9[0] + "</button><button class='quiz-btn' id='btn91' onclick='inc9()'>" + btn9[1] + "</button><button class='quiz-btn' id='btn92' onclick='inc9()'>" + btn9[2] + "</button><button class='quiz-btn' id='btn93' onclick='inc9()'>" + btn9[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
+}
+
+function cor8() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[9] + "</p><button class='quiz-btn' id='btn90' onclick='cor9()'>" + btn9[0] + "</button><button class='quiz-btn' id='btn91' onclick='inc9()'>" + btn9[1] + "</button><button class='quiz-btn' id='btn92' onclick='inc9()'>" + btn9[2] + "</button><button class='quiz-btn' id='btn93' onclick='inc9()'>" + btn9[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
+}
+
+// questions 11 index 10
+function inc9() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[10] + "</p><button class='quiz-btn' id='btn100' onclick='inc10()'>" + btn10[0] + "</button><button class='quiz-btn' id='btn101' onclick='cor10()'>" + btn10[1] + "</button><button class='quiz-btn' id='btn102' onclick='inc10()'>" + btn10[2] + "</button><button class='quiz-btn' id='btn103' onclick='inc10()'>" + btn10[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
+}
+
+function cor9() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[10] + "</p><button class='quiz-btn' id='btn100' onclick='inc10()'>" + btn10[0] + "</button><button class='quiz-btn' id='btn101' onclick='cor10()'>" + btn10[1] + "</button><button class='quiz-btn' id='btn102' onclick='inc10()'>" + btn10[2] + "</button><button class='quiz-btn' id='btn103' onclick='inc10()'>" + btn10[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
+}
+
+// questions 12 index 11
+function inc10() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[11] + "</p><button class='quiz-btn' id='btn110' onclick='inc11()'>" + btn11[0] + "</button><button class='quiz-btn' id='btn111' onclick='inc11()'>" + btn11[1] + "</button><button class='quiz-btn' id='btn112' onclick='inc11()'>" + btn11[2] + "</button><button class='quiz-btn' id='btn113' onclick='cor11()'>" + btn11[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
+}
+
+function cor10() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[11] + "</p><button class='quiz-btn' id='btn110' onclick='inc11()'>" + btn11[0] + "</button><button class='quiz-btn' id='btn111' onclick='inc11()'>" + btn11[1] + "</button><button class='quiz-btn' id='btn112' onclick='inc11()'>" + btn11[2] + "</button><button class='quiz-btn' id='btn113' onclick='cor11()'>" + btn11[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
+}
+
+// questions 13 index 12
+function inc11() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[12] + "</p><button class='quiz-btn' id='btn120' onclick='inc12()'>" + btn12[0] + "</button><button class='quiz-btn' id='btn121' onclick='cor12()'>" + btn12[1] + "</button><button class='quiz-btn' id='btn122' onclick='inc12()'>" + btn12[2] + "</button><button class='quiz-btn' id='btn123' onclick='inc12()'>" + btn12[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Incorrect! </p>"
+}
+
+function cor11() {
+    document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[12] + "</p><button class='quiz-btn' id='btn120' onclick='inc12()'>" + btn12[0] + "</button><button class='quiz-btn' id='btn121' onclick='cor12()'>" + btn12[1] + "</button><button class='quiz-btn' id='btn122' onclick='inc12()'>" + btn12[2] + "</button><button class='quiz-btn' id='btn123' onclick='inc12()'>" + btn12[3] + "</button>";
+
+    document.getElementById('content').innerHTML = "<p> Correct! </p>";
+}
 
 
 //   create quiz page
