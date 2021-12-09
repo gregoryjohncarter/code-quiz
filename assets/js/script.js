@@ -18,8 +18,8 @@ var btn12 = ["a break; needs to be called to prompt the next case", "the syntax 
 var finalScore = 0;
 
 function resetScore() {
-    localStorage.setItem("highscore", "");
-    localStorage.setItem("name", "");
+    localStorage.setItem("playerInfo", "");
+    
 
     document.getElementById('container').innerHTML = "<h2>High scores:</h2><button onclick='resetScore()' class='quiz-btn'>Reset Scores</button><button onclick='createQuizPage()' class='quiz-btn'>Return</button>";
 
@@ -266,7 +266,7 @@ function cor11() {
 
 function inc12() {
 
-    document.getElementById('container').innerHTML = "<h2>All done!<h2><p class='content-p'>Your final score is" + finalScore + ". <label for='finalScoreInput'>Enter initials:</label><input type='text' id='finalScoreInput' name='finalScoreInput' required minlength='2' maxlength='3'><input type='submit' class='quiz-btn' id='submit-btn' name='initials' onClick='scorePage()'></input>";
+    document.getElementById('container').innerHTML = "<h2>All done!<h2><p class='content-p'>Your final score is " + finalScore + ". <label for='finalScoreInput'>Enter initials:</label><input type='text' id='finalScoreInput' name='finalScoreInput' required minlength='2' maxlength='3'><input type='submit' class='quiz-btn' id='submit-btn' name='initials' onClick='scorePage()'></input>";
 
     document.getElementById('content').innerHTML = "<p> Incorrect! </p>";
     resetTimer();
@@ -287,28 +287,95 @@ function cor12() {
 
 
 function scorePage() {
-    document.getElementById('timer').innerHTML = "<p></p>";
-
+        // get the final score added up
     var x = document.getElementById("finalScoreInput").value; 
+
+    // create the high score initial object
     var playerInfo = {
         name: x,
-        // add one third of the remaining time to the score
         score: finalScore 
     }
-   
+
+    var newScores = [];
+       
+
+    var loadScores = function() {
+
+       
+if (!localStorage.getItem("playerInfo")) {
+    var playerInfos = [];
+    newScores.push(playerInfo);
+}
+else { var playerInfos = localStorage.getItem("playerInfo")
+        
+        newScores.push(playerInfo);
+        var playerInfos = JSON.parse(playerInfos);
+
+}
+
+        
+        //sort array ascending
     
-        var highScore = localStorage.getItem("highscore");
-        if (highScore === null) {
-         highScore = 0;
+       // playerInfos.sort((a, b) => b.score - a.score);
+
+        //if (playerInfo.score > playerInfos[0].score) {
+            
+    
+      
+
+
+        // loop through array   
+        for (var i = 0; i <= playerInfos.length - 1; i++) {
+            newScores.push(playerInfos[i]);
+        }
+        
+      }
+      
+      loadScores()
+
+      // take the list including the new score and organize it
+ //function getPlayerInfos(newScores) {
+          // descending
+    //newScores.sort((a, b) => {
+    //    return a.score-b.score;
+    //});
+
+ //   return newScores;
+//}
+
+    document.getElementById('timer').innerHTML = "<p></p>";
+
+
+    // set highscores back into LocalStorage
+    function setScores() {
+        localStorage.setItem("playerInfo", JSON.stringify(newScores));
     }
 
-    if (playerInfo.score > highScore) {
-        localStorage.setItem("highscore", playerInfo.score);
-        localStorage.setItem("name", playerInfo.name);
-    }
+    setScores();
 
-    document.getElementById('container').innerHTML = "<h2>High scores: " + playerInfo.score + " " + playerInfo.name + "</h2><button onclick='resetScore()' class='quiz-btn'>Reset Scores</button><button onclick='createQuizPage()' class='quiz-btn'>Return</button>";
+    
+
+
+
+
+    // append content as an UL and LI, and buttons
+    var container = document.getElementById('container');
+    document.getElementById('container').innerHTML = "<h2>High scores: " + playerInfo.score + " " + playerInfo.name + "</h2>";
+    var ul = document.createElement('ul');
+    container.appendChild(ul);
+    
+        for (var i=0; i < newScores.length - 1; i++) {
+            debugger;
+            var li = document.createElement('li');
+            li.textContent = newScores[i].name + ": " + newScores[i].score;
+            ul.appendChild(li);
+        }
+
+     document.getElementById('container').innerHTML += "<button onclick='resetScore()' class='quiz-btn'>Reset Scores</button><button onclick='createQuizPage()' class='quiz-btn'>Return</button>";
     document.getElementById('content').innerHTML = "<p></p>";
+    
+
+
 }
 
 
