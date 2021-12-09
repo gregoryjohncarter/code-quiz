@@ -287,7 +287,7 @@ function cor12() {
 
 
 function scorePage() {
-        // get the final score added up
+    // get the final score added up
     var x = document.getElementById("finalScoreInput").value; 
 
     // create the high score initial object
@@ -302,46 +302,39 @@ function scorePage() {
     var loadScores = function() {
 
        
-if (!localStorage.getItem("playerInfo")) {
-    var playerInfos = [];
-    newScores.push(playerInfo);
-}
-else { var playerInfos = localStorage.getItem("playerInfo")
+        if (!localStorage.getItem("playerInfo")) {
+            var playerInfos = [];
+            newScores.push(playerInfo);
+        } else { 
+            var playerInfos = localStorage.getItem("playerInfo")
         
-        newScores.push(playerInfo);
-        var playerInfos = JSON.parse(playerInfos);
+            newScores.push(playerInfo);
+            var playerInfos = JSON.parse(playerInfos);
 
-}
-
-        
-        //sort array ascending
-    
-       // playerInfos.sort((a, b) => b.score - a.score);
-
-        //if (playerInfo.score > playerInfos[0].score) {
-            
-    
-      
-
+        }
 
         // loop through array   
-        for (var i = 0; i <= playerInfos.length - 1; i++) {
+        for (var i = 0; i < playerInfos.length - 1; i++) {
             newScores.push(playerInfos[i]);
         }
         
-      }
-      
-      loadScores()
 
-      // take the list including the new score and organize it
- //function getPlayerInfos(newScores) {
-          // descending
+        //sort array ascending
+        //playerInfos.sort((a, b) => b.score - a.score);
+
+    }
+      
+    loadScores()
+
+    // take the list including the new score and organize it
+    //function getPlayerInfos(newScores) {
+    // descending
     //newScores.sort((a, b) => {
     //    return a.score-b.score;
     //});
 
- //   return newScores;
-//}
+    //   return newScores;
+    //}
 
     document.getElementById('timer').innerHTML = "<p></p>";
 
@@ -363,22 +356,17 @@ else { var playerInfos = localStorage.getItem("playerInfo")
     document.getElementById('container').innerHTML = "<h2>High scores: " + playerInfo.score + " " + playerInfo.name + "</h2>";
     var ul = document.createElement('ul');
     container.appendChild(ul);
-    
-        for (var i=0; i < newScores.length - 1; i++) {
-            debugger;
-            var li = document.createElement('li');
-            li.textContent = newScores[i].name + ": " + newScores[i].score;
-            ul.appendChild(li);
-        }
+    for (var i=0; i < newScores.length - 1; i++) {
+       
+        var li = document.createElement('li');
+        li.textContent = newScores[i].name + ": " + newScores[i].score;
+        ul.appendChild(li);
+    }
 
-     document.getElementById('container').innerHTML += "<button onclick='resetScore()' class='quiz-btn'>Reset Scores</button><button onclick='createQuizPage()' class='quiz-btn'>Return</button>";
+    document.getElementById('container').innerHTML += "<button onclick='resetScore()' class='quiz-btn'>Reset Scores</button><button onclick='createQuizPage()' class='quiz-btn'>Return</button>";
     document.getElementById('content').innerHTML = "<p></p>";
     
-
-
 }
-
-
 
 //   create quiz page
 var createQuizPage = function() {
