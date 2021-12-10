@@ -298,33 +298,37 @@ function scorePage() {
 
     var newScores = [];
        
-
-    var loadScores = function() {
-
+    
+        // load scores function has been deleted to change scope ??
        
-        if (!localStorage.getItem("playerInfo")) {
+        if (localStorage.getItem("playerInfo") === null) {
             var playerInfos = [];
-            newScores.push(playerInfo);
+    
         } else { 
             var playerInfos = localStorage.getItem("playerInfo")
-        
-            newScores.push(playerInfo);
+           
+            debugger;
             var playerInfos = JSON.parse(playerInfos);
-
-        }
-
-        // loop through array   
-        for (var i = 0; i < playerInfos.length - 1; i++) {
+            
+            // loop through array   
+            for (var i = 0; i <= playerInfos.length - 1; i++) {
             newScores.push(playerInfos[i]);
         }
+        }
+
+        
         
 
         //sort array ascending
         //playerInfos.sort((a, b) => b.score - a.score);
-
-    }
+        
+    
       
-    loadScores()
+    
+
+
+        newScores.push(playerInfo);
+        
 
     // take the list including the new score and organize it
     //function getPlayerInfos(newScores) {
@@ -339,26 +343,22 @@ function scorePage() {
     document.getElementById('timer').innerHTML = "<p></p>";
 
 
-    // set highscores back into LocalStorage
-    function setScores() {
-        localStorage.setItem("playerInfo", JSON.stringify(newScores));
-    }
+   // sort scores
 
-    setScores();
-
+   // list.sort((a, b) => (a.color > b.color) ? 1 : -1)
     
-
-
-
 
     // append content as an UL and LI, and buttons
     var container = document.getElementById('container');
     document.getElementById('container').innerHTML = "<h2>High scores: " + playerInfo.score + " " + playerInfo.name + "</h2>";
     var ul = document.createElement('ul');
+    ul.className = 'ul-style';
     container.appendChild(ul);
-    for (var i=0; i < newScores.length - 1; i++) {
+    
+    for (var i=0; i <= newScores.length - 1; i++) {
        
         var li = document.createElement('li');
+        li.className = 'li-style';
         li.textContent = newScores[i].name + ": " + newScores[i].score;
         ul.appendChild(li);
     }
@@ -366,15 +366,22 @@ function scorePage() {
     document.getElementById('container').innerHTML += "<button onclick='resetScore()' class='quiz-btn'>Reset Scores</button><button onclick='createQuizPage()' class='quiz-btn'>Return</button>";
     document.getElementById('content').innerHTML = "<p></p>";
     
+
+
+    // last thing is setting scores
+    function setScores() {
+        localStorage.setItem("playerInfo", JSON.stringify(newScores));
+    }
+
+    setScores();
 }
 
-//   create quiz page
-var createQuizPage = function() {
-    
-    let div = document.querySelector('.container');
-    div.innerHTML = "<H1 class='container-h1'>Code Quiz</h1><p class='content-p'>Try to answer questions correctly within the alloted time limit. Incorrect answers will deduct from your time and final score.</p> <button class='quiz-btn' onclick='startQuiz()'>Start Quiz</button>";
-    document.getElementById('content').innerHTML = "<p></p>";
-    
-}
+    //   create quiz page
+    var createQuizPage = function() {
+        finalScore = 0;
+        let div = document.querySelector('.container');
+        div.innerHTML = "<H1 class='container-h1'>Code Quiz</h1><p class='content-p'>Try to answer questions correctly within the alloted time limit. Incorrect answers will deduct from your time and final score.</p> <button class='quiz-btn' onclick='startQuiz()'>Start Quiz</button>";
+        document.getElementById('content').innerHTML = "<p></p>";
+    }
 
 createQuizPage();

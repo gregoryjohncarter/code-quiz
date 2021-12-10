@@ -4,6 +4,7 @@
     --secondary-hover: #9ae2ff;
     --tertiary: #979797;
 }
+
 .container {
  
 
@@ -29,8 +30,9 @@
 }
 
 .content {
-   
-    
+   color: var(--secondary);
+   text-shadow: 2px 2px 6px var(--tertiary);
+    font-size: 25px;
     
 }
 
@@ -59,7 +61,20 @@
     background: var(--secondary-hover);
 }
 
+.ul-style {
+    background: grey;
+    box-shadow: -3px 10px 12px #727272;
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
 
+.li-style {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    color: whitesmoke;
+    display: block;
+}
 
 
 
