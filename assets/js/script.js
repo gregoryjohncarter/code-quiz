@@ -17,20 +17,19 @@ var btn12 = ["a break; needs to be called to prompt the next case", "the syntax 
 
 var finalScore = 0;
 
+
+// reset scores function for the ending page
 function resetScore() {
-    localStorage.setItem("playerInfo", "");
+    localStorage.clear();
     
-
     document.getElementById('container').innerHTML = "<h2>High scores:</h2><button onclick='resetScore()' class='quiz-btn'>Reset Scores</button><button onclick='createQuizPage()' class='quiz-btn'>Return</button>";
-
 }
-
 
 function countShell() {
 
 // create timer on page, count and counter defined globally
 
-window.count=120;
+window.count=210;
 
 //1000 will  run it every 1 second
 
@@ -46,11 +45,7 @@ window.count=120;
     
         return;
         }
-    document.getElementById("timer").innerHTML=window.count + " secs"; 
-
-   
-
-
+        document.getElementById("timer").innerHTML=window.count + " secs"; 
     }
 }
 
@@ -58,6 +53,7 @@ function resetTimer() {
     clearInterval(window.counter);
 }
 
+// run this whenever an incorrect answer is clicked
 function minusTime() {
     window.count -= 5;
 }
@@ -65,8 +61,6 @@ function minusTime() {
 
 // question 1 index 0
 function startQuiz() {
-
-   
     document.getElementById('container').innerHTML = "<p class='content-p'>" + questionSource[0] + "</p><button class='quiz-btn' id='btn1' onclick='inc0()'>" + btn0[0] + "</button><button class='quiz-btn' id='btn1' onclick='inc0()'>" + btn0[1] + "</button><button class='quiz-btn' id='btn2' onclick='cor0()'>" + btn0[2] + "</button><button class='quiz-btn' id='btn1' onclick='inc0()'>" + btn0[3] + "</button>";
     
 }
@@ -249,9 +243,6 @@ function inc11() {
 
     document.getElementById('content').innerHTML = "<p> Incorrect! </p>";
    
-
-   
-    
 }
 
 function cor11() {
@@ -260,8 +251,6 @@ function cor11() {
     document.getElementById('content').innerHTML = "<p> Correct! </p>";
     finalScore += 4;
 
-  
-    
 }
 
 function inc12() {
@@ -270,7 +259,6 @@ function inc12() {
 
     document.getElementById('content').innerHTML = "<p> Incorrect! </p>";
     resetTimer();
-    
     
 }
 
@@ -281,10 +269,7 @@ function cor12() {
     document.getElementById('content').innerHTML = "<p> Correct! </p>";
     resetTimer();
     
-    
 }
-
-
 
 function scorePage() {
     // get the final score added up
@@ -298,7 +283,6 @@ function scorePage() {
 
     var newScores = [];
        
-    
         // load scores function has been deleted to change scope ??
        
         if (localStorage.getItem("playerInfo") === null) {
@@ -306,46 +290,23 @@ function scorePage() {
     
         } else { 
             var playerInfos = localStorage.getItem("playerInfo")
-           
-            debugger;
             var playerInfos = JSON.parse(playerInfos);
             
-            // loop through array   
-            for (var i = 0; i <= playerInfos.length - 1; i++) {
-            newScores.push(playerInfos[i]);
-        }
-        }
+                // loop through array of previous scores and push to new 
+                for (var i = 0; i <= playerInfos.length - 1; i++) {
+                newScores.push(playerInfos[i]);
+                }
+            }
 
-        
-        
+    // push the current info to a new array      
+    newScores.push(playerInfo);
 
-        //sort array ascending
-        //playerInfos.sort((a, b) => b.score - a.score);
-        
-    
-      
-    
-
-
-        newScores.push(playerInfo);
-        
-
-    // take the list including the new score and organize it
-    //function getPlayerInfos(newScores) {
-    // descending
-    //newScores.sort((a, b) => {
-    //    return a.score-b.score;
-    //});
-
-    //   return newScores;
-    //}
-
+    // hide timer 
     document.getElementById('timer').innerHTML = "<p></p>";
 
 
    // sort scores
-
-   // list.sort((a, b) => (a.color > b.color) ? 1 : -1)
+    newScores.sort((a, b) => (a.score < b.score) ? 1 : -1);
     
 
     // append content as an UL and LI, and buttons
@@ -366,12 +327,10 @@ function scorePage() {
     document.getElementById('container').innerHTML += "<button onclick='resetScore()' class='quiz-btn'>Reset Scores</button><button onclick='createQuizPage()' class='quiz-btn'>Return</button>";
     document.getElementById('content').innerHTML = "<p></p>";
     
-
-
     // last thing is setting scores
     function setScores() {
         localStorage.setItem("playerInfo", JSON.stringify(newScores));
-    }
+    }    
 
     setScores();
 }
@@ -382,6 +341,11 @@ function scorePage() {
         let div = document.querySelector('.container');
         div.innerHTML = "<H1 class='container-h1'>Code Quiz</h1><p class='content-p'>Try to answer questions correctly within the alloted time limit. Incorrect answers will deduct from your time and final score.</p> <button class='quiz-btn' onclick='startQuiz()'>Start Quiz</button>";
         document.getElementById('content').innerHTML = "<p></p>";
+
+        const span = document.querySelector('.span-style');
+        span.innerHTML = "<button class='quiz-btn2' onclick='inc12()'>View high scores</button>";
+        span.className = 'span-style';
+
     }
 
 createQuizPage();
